@@ -27,8 +27,11 @@ h1{color:#5F9EA0; font-size:27px;}
 <td th:text="${student.firstName}"></td>
 <td th:text="${student.lastName}"></td>
 <td th:text="${student.email}"></td>
+<td class="actions"><a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-primary">Edit</a>   						
+							<a th:href="@{/students/delete/{id}(id=${student.id})}" class="btn btn-danger">Delete</a> </td>  
 </tr>
 </table>
+<a th:href="@{/students/new}">Add new</a>
 <div th:replace="fragments/footer ::footer"></div>
 
 
