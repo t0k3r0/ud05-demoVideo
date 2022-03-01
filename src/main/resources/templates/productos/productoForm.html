@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+   
+    <title>Crear producto</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+
+<form method="post" action="#"th:action="@{/productos/new/submit}" th:object="${producto}">
+<h1>
+<span th:text="${id} ? 'Editar' : 'Nuevo'"></span> producto <!-- esto ke es-->
+</h1>
+  <input type="hidden" th:field="*{id}" id="id"/><!-- para que al editar no anada uno nuevo -->
+  <div class="form-group">
+	<label for="nombreInput">Nombre</label>
+	<input class="form-control" type="text"	placeholder="Introduce Nombre" th:field="*{nombre}"></input>
+  </div>				
+   <div class="form-group">
+    <label for="descripcionInput">Descripcion</label>
+    <input class="form-control" type="text" placeholder="Introduce Descripcion" th:field="*{descripcion}">
+  </div>
+  <div class="form-group">
+    <label for="precioInput">Precio</label>
+    <input class="form-control" type="text" placeholder="Introduce Precio" th:field="*{precio}">
+  </div>
+    
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

@@ -1,10 +1,12 @@
 body{
-	background-color:#F0FFF0;
+	background-color:rgb(255, 0, 128);
+		font-family: consolas;
+
 	
 }
 
 h2{
 	
-	font-family: sans-serif;
-	text-transform:lowercase
+	font-family: consolas;
+	text-transform:uppercase
 }
